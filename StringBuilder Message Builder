@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder message = new StringBuilder();
+        message.append("Student Information\n");
+        message.append("Name: Juan Dela Cruz\n");
+        message.append("Course: BS Information Technology\n");
+        message.append("Year: 2\n");
+        message.append("Status: Active");
+        String finalMessage = message.toString();
+        System.out.println(finalMessage);
+    }
+}
