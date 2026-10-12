@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in)
+
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();       
+        System.out.println("Original sentence: " + sentence);      
+        int length = sentence.length();
+        System.out.println("Length: " + length);  
+        System.out.println("Uppercase: " + sentence.toUpperCase());
+        System.out.println("Lowercase: " + sentence.toLowerCase());     
+        if (length > 0) {
+            char firstChar = sentence.charAt(0);
+            System.out.println("First character: " + firstChar);
+        }
+        if (length > 0) {
+            char lastChar = sentence.charAt(length - 1);
+            System.out.println("Last character: " + lastChar);
+        }
+        System.out.print("Enter a character to count its occurrences: ");
+        char targetChar = scanner.next().charAt(0);
+        int count = 0;
+        int index = sentence.indexOf(targetChar);  
+        while (index != -1) {
+            count++;
+            index = sentence.indexOf(targetChar, index + 1);
+        }
+        System.out.println("Occurrences of '" + targetChar + "': " + count);
+        boolean containsJava = sentence.contains("Java");
+        System.out.println("Contains Java: " + containsJava);
+        scanner.close();
+    }
+}
