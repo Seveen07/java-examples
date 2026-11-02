@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class StudentScoreValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a student score: ");
+        String input = scanner.nextLine();
+        
+        try {
+            int score = Integer.parseInt(input);
+            
+            if (score >= 0 && score <= 100) {
+                System.out.println("Valid score");
+            } else {
+                System.out.println("Score out of range");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid numeric input");
+        } finally {
+            System.out.println("Program completed.");
+        }
+        
+        scanner.close();
+    }
+}
